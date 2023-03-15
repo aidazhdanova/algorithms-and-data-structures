@@ -9,13 +9,10 @@ def satisfied_children() -> int:
     greed_factors = list(map(int, input().split()))
     num_cookies = int(input())
     cookie_sizes = list(map(int, input().split()))
-
     # сортируем списки факторов жадности и размеров печенек по возрастанию
     greed_factors.sort()
     cookie_sizes.sort()
-
     i = j = count = 0
-
     # проходим по списку факторов жадности и пытаемся удовлетворить каждого ребенка
     while i < num_children and j < num_cookies:
         if greed_factors[i] <= cookie_sizes[j]:
