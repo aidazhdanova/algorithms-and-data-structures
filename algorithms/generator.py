@@ -12,8 +12,6 @@ def generate_parentheses(n: int, left: int, right: int, current: str) -> None:
     # Если остались неиспользованные открывающие скобки, то добавляем открывающую скобку в текущую ПСП и вызываем функцию снова.
     if left > 0:
         generate_parentheses(n, left-1, right, current + '(')
-    # Если остались неиспользованные закрывающие скобки, и их количество больше, чем количество открывающих скобок, 
-    # то добавляем закрывающую скобку в текущую ПСП и вызываем функцию снова.
     if right > left:
         generate_parentheses(n, left, right-1, current + ')')
 
@@ -24,5 +22,6 @@ def generate_all_parentheses(n: int) -> None:
     """
     generate_parentheses(n*2, n, n, '')
 
-n = int(input())
-generate_all_parentheses(n)
+if __name__ == '__main__':
+    n = int(input())
+    generate_all_parentheses(n)
